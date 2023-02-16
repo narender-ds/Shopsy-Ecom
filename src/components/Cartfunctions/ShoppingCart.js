@@ -17,7 +17,7 @@ import {
   CartTotal,
   Mask,
   EmptyCart,
-} from "../functions/CartFunctions";
+} from "./CartFunctions";
 const ShoppingCart = () => {
   const cart = useSelector((state) => state.cart);
   const ui = useSelector((state) => state.ui);

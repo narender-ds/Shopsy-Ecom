@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import ShoppingDetailRelated from "../ShopDetailRelated";
+import ShoppingDetailRelated from "../../pages/ShopDetailRelated";
 import thumb_1 from "../../assets/images/shop-details/thumb-1.png";
 import thumb_2 from "../../assets/images/shop-details/thumb-1.png";
 import thumb_3 from "../../assets/images/shop-details/thumb-1.png";
@@ -154,7 +154,7 @@ const ShopDetails = () => {
                       </div>
                     </div>
                     <Link onClick={() => {
-                          dispatch(addToCart(products));
+                          // dispatch(addToCart(products));
                         }} className="primary-btn">
                       add to cart
                     </Link>

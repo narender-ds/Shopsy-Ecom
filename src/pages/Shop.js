@@ -55,7 +55,7 @@ const Shop = () => {
                                 <Link to="/shopping-cart">Women (20)</Link>
                               </li>
                               <li>
-                                <Link to="/shopping-cart">Bags (20)</Link>
+                                <Link to="/smartphones">SmartPhones (20)</Link>
                               </li>
                               <li>
                                 <Link to="/shopping-cart">Clothing (20)</Link>
@@ -130,6 +130,7 @@ const Shop = () => {
                         className="collapse show"
                         data-parent="/shopping-cartaccordionExample"
                       >
+                        {}
                         <div className="card-body">
                           <div className="shop__sidebar__price">
                             <ul>

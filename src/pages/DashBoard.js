@@ -1,15 +1,13 @@
 import React from "react";
-import Categories from "../components/Categories";
+import Categories from "../components/miscellaneous/Categories";
 import Instagram from "../components/blog/Instagram";
 import Banner from "../components/layouts/Banner";
-import productData from "../constant/ProductData"
 import MainProducts from "../components/products/MainProducts";
-console.log('productData', productData)
 const DashBoard = () => {
   return (
     <>
       <Banner />
-      <section className="product spad" >
+      <section className="product spad">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -26,7 +24,6 @@ const DashBoard = () => {
         </div>
         <Categories />
         <Instagram />
-       
       </section>
     </>
   );

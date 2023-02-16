@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import HeartIcons from "../../assets/images/icon/heart.png";
-import CompareIcons from "../../assets/images/icon/compare.png";
-import SearchIcons from "../../assets/images/icon/search.png";
-import { Link} from "react-router-dom";
-import { productlists } from "../../api/ApiCall";
-import { addToCart } from "../../redux/slice/CartSlice";
-import { fetchProducts } from "../../redux/slice/ProductDetailSlice";
+import HeartIcons from "../assets/images/icon/heart.png";
+import CompareIcons from "../assets/images/icon/compare.png";
+import SearchIcons from "../assets/images/icon/search.png";
 import { useDispatch, useSelector } from "react-redux";
-import CartSlider from "../Cartfunctions/CartSlider";
+import { Link } from "react-router-dom";
+import { productlists } from "../api/ApiCall";
+import { addToCart } from "../redux/slice/CartSlice";
+import { fetchProducts } from "../redux/slice/ProductDetailSlice";
+import Shop from "./Shop";
 
-const MainProducts = () => {
+const SmartPhones = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
   console.log("productsproducts", products);
@@ -29,7 +29,7 @@ const MainProducts = () => {
 
   return (
     <>
-      <CartSlider />
+      <Shop />
       <div className="row">
         {getProduct?.products?.map((products) => {
           return (
@@ -115,5 +115,4 @@ const MainProducts = () => {
   );
 };
 
-export default MainProducts;
-
+export default SmartPhones;

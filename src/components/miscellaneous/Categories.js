@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Bagimg from "../assets/images/product-sale.png";
+import Bagimg from "../../assets/images/product-sale.png";
 const Categories = () => {
   return (
     <>

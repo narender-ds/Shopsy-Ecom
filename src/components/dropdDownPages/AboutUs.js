@@ -1,8 +1,8 @@
 import React from 'react'
-import ClientSection from '../ClientSection'
-import CounterSectionForAbout from '../CounterSectionForAbout'
-import TeamSection from '../TeamSection'
-import TestiMonials from '../TestiMonials'
+import ClientSection from '../miscellaneous/ClientSection'
+import CounterSectionForAbout from '../miscellaneous/CounterSectionForAbout'
+import TeamSection from '../miscellaneous/TeamSection'
+import TestiMonials from '../miscellaneous/TestiMonials'
 
 const AboutUs=()=> {
   return (
