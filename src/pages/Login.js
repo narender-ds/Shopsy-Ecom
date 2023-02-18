@@ -5,6 +5,7 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Toster from "../utils/toster";
 const Validations = Yup.object({
   email: Yup.string().email("Invalid Email").required("Email is Required"),
   password: Yup.string().min(8).max(20).required("Password is Required"),
@@ -15,7 +16,7 @@ const initialValues = {
   password: "",
 };
 
-toast.error("Network error");
+// toast.error("Network error");
 const Login = () => {
 const navigate = useNavigate()
 const notify = () => toast.Showerror;
@@ -28,11 +29,12 @@ const notify = () => toast.Showerror;
         console.log('value', value)
        if (value) {
         navigate("/Home")
+        Toster.orderPlacedMessage("success eefgsdgdgdhdfdgdfh")
        }
         action.resetForm();
       },
     });
-    
+    console.log('initialValues', initialValues)
   return (
     <>
       <>

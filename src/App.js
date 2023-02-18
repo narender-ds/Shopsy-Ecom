@@ -5,7 +5,7 @@ import "./assets/css/bootstrap.min.css";
 import "./assets/css/elegant-icons.css";
 import "./assets/css/font-awesome.min.css";
 import "./assets/css/nice-select.css";
-
+import { ToastContainer } from "react-toastify";
 function App() {
   return (
     <div className="App">
@@ -13,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Navigation />
       </BrowserRouter>
-   
+      <ToastContainer autoClose={4000} />
     </div>
   );
 }

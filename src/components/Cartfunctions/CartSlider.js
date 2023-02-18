@@ -14,6 +14,7 @@ import {
   CartProductQuantity,
   CartTotal,
   Mask,
+  EmptyCart,
 } from "./CartFunctions";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -37,12 +38,13 @@ const CartSlider = () => {
         ) : (
           <EmptyCart>Your Cart is Empty</EmptyCart>
         )} */}
-        <div
+        {cart.length > 0 ?  <div
           className="display flex"
-          style={{ alignContent: "center", justifyContent: "space-between" }}
+          style={{ alignContent: "center", justifyContent: "space-between",color: "#ff6700" }}
         >
-          <h4>Shopping Cart</h4>
-        </div>
+          <h4 style={{color: "#ff6700"}}>Shopping Cart</h4>
+        </div> : <EmptyCart>Your Cart is Empty</EmptyCart>}
+       
         {cart.map((cartItem) => (
           <CartItem key={cartItem.id}>
             <CartProductImage src={cartItem.thumbnail} alt={cartItem.title} />
@@ -73,9 +75,12 @@ const CartSlider = () => {
           </CartItem>
         ))}
         {totalPrice > 0 && <CartTotal>Total ${totalPrice}</CartTotal>}
-        <CartClearButton onClick={() => navigate("/shopping-cart")}>
+        {cart.length > 0 ? <CartClearButton onClick={() => navigate("/shopping-cart")}>
           Go To Cart
-        </CartClearButton>
+        </CartClearButton> : <CartClearButton onClick={() => navigate("/shop")}>
+          Shop Now
+        </CartClearButton>}
+        
       </CartContainer>
 
       {ui.cartDrawerVisible && (

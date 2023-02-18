@@ -1,4 +1,6 @@
 import React from 'react'
+import test1 from "../../assets/images/about/testimonial-author.jpg"
+import test2 from "../../assets/images/about/testimonial-pic.jpg"
 
 const TestiMonials=()=> {
   return (
@@ -16,7 +18,7 @@ const TestiMonials=()=> {
           </p>
           <div className="testimonial__author">
             <div className="testimonial__author__pic">
-              <img src="img/about/testimonial-author.jpg" alt="" />
+              <img src={test1} alt="" />
             </div>
             <div className="testimonial__author__text">
               <h5>Augusta Schultz</h5>
@@ -28,8 +30,8 @@ const TestiMonials=()=> {
       <div className="col-lg-6 p-0">
         <div
           className="testimonial__pic set-bg"
-          data-setbg="img/about/testimonial-pic.jpg"
-        />
+          // data-setbg="img/about/testimonial-pic.jpg"
+        ><img src={test2} alt="" /> </div>
       </div>
     </div>
   </div>

@@ -3,7 +3,7 @@ import ClientSection from '../miscellaneous/ClientSection'
 import CounterSectionForAbout from '../miscellaneous/CounterSectionForAbout'
 import TeamSection from '../miscellaneous/TeamSection'
 import TestiMonials from '../miscellaneous/TestiMonials'
-
+import about1 from "../../assets/images/about/about-us.jpg"
 const AboutUs=()=> {
   return (
     <>
@@ -12,7 +12,7 @@ const AboutUs=()=> {
     <div className="row">
       <div className="col-lg-12">
         <div className="about__pic">
-          <img src="img/about/about-us.jpg" alt="" />
+          <img src={about1} alt="" />
         </div>
       </div>
     </div>

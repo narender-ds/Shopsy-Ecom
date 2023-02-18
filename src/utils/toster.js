@@ -32,9 +32,10 @@ function Showinfo(data) {
     closeOnClick:true
   });
 }
-const orderPlacedMessage = () => {
-  toast.success('Order Placed', {
-      position: toast.POSITION.TOP_CENTER
+const orderPlacedMessage = (data) => {
+  toast.success(data, {
+      position: toast.POSITION.TOP_CENTER,
+      closeOnClick:true
   });
 };
 const Toster = {

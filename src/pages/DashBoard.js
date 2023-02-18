@@ -7,6 +7,7 @@ const DashBoard = () => {
   return (
     <>
       <Banner />
+
       <section className="product spad">
         <div className="container">
           <div className="row">

@@ -37,11 +37,7 @@ const ShoppingCart = () => {
           </div>
         </div>
       </section>
-      {cart.length > 0 ? (
-        ""
-      ) : (
-        <EmptyCart >Your Cart is Empty</EmptyCart>
-      )}
+      {cart.length > 0 ? "" : <EmptyCart>Your Cart is Empty</EmptyCart>}
       <section className="shopping-cart spad" visible={ui.cartDrawerVisible}>
         <div className="container">
           <div className="row">
@@ -83,7 +79,7 @@ const ShoppingCart = () => {
                             <td className="cart__price">
                               {" "}
                               <CartProductSubtotal>
-                                $： {cartItem.quantity * cartItem.price}
+                                $ {cartItem.quantity * cartItem.price}
                               </CartProductSubtotal>
                             </td>
 
@@ -91,7 +87,7 @@ const ShoppingCart = () => {
                               <i
                                 className="fa fa-close"
                                 onClick={() => {
-                                  dispatch(removeItem());
+                                  dispatch(removeItem(cartItem.id));
                                 }}
                               />
                             </td>
@@ -157,19 +153,19 @@ const ShoppingCart = () => {
                     return (
                       <>
                         <li>
-                          Subtotal of {catItem.title}{" "}
+                          {catItem.title}
                           <span>
                             <CartProductSubtotal>
-                              $： {catItem.quantity * catItem.price}
+                               {catItem.quantity * catItem.price}
                             </CartProductSubtotal>
                           </span>
                         </li>
                       </>
                     );
                   })}
-
+<hr/>
                   <li>
-                    {totalPrice > 0 && <CartTotal>${totalPrice}</CartTotal>}
+                     {totalPrice > 0 &&  <CartTotal >Total $ {totalPrice}</CartTotal>}
                   </li>
                 </ul>
                 <Link to="/checkout" className="primary-btn">

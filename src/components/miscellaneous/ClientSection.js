@@ -1,5 +1,12 @@
 import React from 'react'
-
+import client1 from "../../assets/images/clients/client-1.png"
+import client2 from "../../assets/images/clients/client-2.png"
+import client3 from "../../assets/images/clients/client-3.png"
+import client4 from "../../assets/images/clients/client-4.png"
+import client5 from "../../assets/images/clients/client-5.png"
+import client6 from "../../assets/images/clients/client-6.png"
+import client7 from "../../assets/images/clients/client-7.png"
+import client8 from "../../assets/images/clients/client-8.png"
 const ClientSection=()=> {
   return (
     <>
@@ -16,42 +23,42 @@ const ClientSection=()=> {
     <div className="row">
       <div className="col-lg-3 col-md-4 col-sm-4 col-6">
         <a href="#" className="client__item">
-          <img src="img/clients/client-1.png" alt="" />
+          <img src={client1} alt="" />
         </a>
       </div>
       <div className="col-lg-3 col-md-4 col-sm-4 col-6">
         <a href="#" className="client__item">
-          <img src="img/clients/client-2.png" alt="" />
+          <img src={client2} alt="" />
         </a>
       </div>
       <div className="col-lg-3 col-md-4 col-sm-4 col-6">
         <a href="#" className="client__item">
-          <img src="img/clients/client-3.png" alt="" />
+          <img src={client3} alt="" />
         </a>
       </div>
       <div className="col-lg-3 col-md-4 col-sm-4 col-6">
         <a href="#" className="client__item">
-          <img src="img/clients/client-4.png" alt="" />
+          <img src={client4} alt="" />
         </a>
       </div>
       <div className="col-lg-3 col-md-4 col-sm-4 col-6">
         <a href="#" className="client__item">
-          <img src="img/clients/client-5.png" alt="" />
+          <img src={client5} alt="" />
         </a>
       </div>
       <div className="col-lg-3 col-md-4 col-sm-4 col-6">
         <a href="#" className="client__item">
-          <img src="img/clients/client-6.png" alt="" />
+          <img src={client6} alt="" />
         </a>
       </div>
       <div className="col-lg-3 col-md-4 col-sm-4 col-6">
         <a href="#" className="client__item">
-          <img src="img/clients/client-7.png" alt="" />
+          <img src={client7} alt="" />
         </a>
       </div>
       <div className="col-lg-3 col-md-4 col-sm-4 col-6">
         <a href="#" className="client__item">
-          <img src="img/clients/client-8.png" alt="" />
+          <img src={client8} alt="" />
         </a>
       </div>
     </div>

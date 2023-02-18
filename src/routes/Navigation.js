@@ -8,13 +8,14 @@ import SearchBar from "../components/layouts/SearchBar";
 import BlogDetals from "../components/blog/BlogDetals";
 import AboutUs from "../components/dropdDownPages/AboutUs";
 import ShoppingCart from "../components/Cartfunctions/ShoppingCart";
-import ShopDetails from "../components/dropdDownPages/ShopDetails";
 import CheckOut from "../components/dropdDownPages/CheckOut";
 import Contact from "../pages/Contact";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import MainProducts from "../components/products/MainProducts";
 import SmartPhones from "../pages/SmartPhones";
+import Category from "../pages/Category";
+import ShopDetails from "../components/dropdDownPages/ShopDetails";
 
 const Navigation = () => {
   return (
@@ -29,13 +30,14 @@ const Navigation = () => {
         <Route path="/blog-details" element={<BlogDetals />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/shopping-cart" element={<ShoppingCart />} />
-        <Route path="/shop-details" element={<ShopDetails />} />
+        <Route path="/category" element={<Category />} />
         <Route path="/checkout" element={<CheckOut />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="products" element={<MainProducts />} />
         <Route path="/smartphones" element={<SmartPhones />} />
+        <Route path="/shop-details" element={<ShopDetails />} />
       </Routes>
       <Footer />
     </div>

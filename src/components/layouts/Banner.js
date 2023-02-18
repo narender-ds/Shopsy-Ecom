@@ -5,6 +5,7 @@ import Hero2 from "../../assets/images/hero/hero-2.jpg"
 const Banner=()=> {
   return (
     <>
+    <div className="container-fluid">
     <section className="hero">
   <div className="hero__slider owl-carousel">
     <div className="hero__items set-bg" >
@@ -12,7 +13,7 @@ const Banner=()=> {
       <div className="container">
         <div className="row">
           <div className="col-xl-5 col-lg-7 col-md-8">
-            <div className="hero__text">
+            {/* <div className="hero__text">
               <h6>Summer Collection</h6>
               <h2>Fall - Winter Collections 2030</h2>
               <p>
@@ -36,7 +37,7 @@ const Banner=()=> {
                   <i className="fa fa-instagram" />
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -76,7 +77,7 @@ const Banner=()=> {
     </div> */}
   </div>
 </section>
-
+</div>
     </>
   )
 }

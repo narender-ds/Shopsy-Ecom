@@ -4,7 +4,9 @@ import Bagimg from "../../assets/images/product-sale.png";
 const Categories = () => {
   return (
     <>
+  
       <section className="categories spad">
+      <div className="container-fluid">
         <div className="container">
           <div className="row">
             <div className="col-lg-3">
@@ -56,7 +58,9 @@ const Categories = () => {
             </div>
           </div>
         </div>
+        </div>
       </section>
+      
     </>
   );
 };

@@ -36,7 +36,6 @@ const Register = () => {
     initialValues: initialValues,
     validationSchema: Validations,
     onSubmit: (value, action) => {
-      console.log(value);
       action.resetForm();
       if (value) {
         navigate("/login")

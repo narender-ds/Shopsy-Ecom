@@ -153,12 +153,15 @@ const ShopDetails = () => {
                         <input type="text" defaultValue={1} />
                       </div>
                     </div>
-                    <Link onClick={() => {
-                          // dispatch(addToCart(products));
-                        }} className="primary-btn">
+                    <button
+                      // to="/shopping-cart"
+                      onClick={() => {
+                        dispatch(addToCart(detail));
+                      }}
+                      className="primary-btn"
+                    >
                       add to cart
-                    </Link>
-                    
+                    </button>
                   </div>
                   <div className="product__details__btns__option">
                     <Link to="#">

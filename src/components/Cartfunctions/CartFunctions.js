@@ -1,6 +1,9 @@
 import { Button } from "../products/productss";
+import { primaryColor } from "../products/productss";
+import animation from "react-animations/lib/swing";
+
 import styled, { keyframes } from "styled-components";
-export  const fade = keyframes`
+export const fade = keyframes`
 from {
   opacity:0
 }
@@ -11,7 +14,7 @@ to {
 `;
 export const CartContainer = styled.div`
   position: fixed;
-  top: 0;
+  top: 105px;
   right: 0;
   z-index: 2;
   width: 300px;
@@ -75,6 +78,8 @@ export const CartTotal = styled.div`
   padding: 16px 0;
   font-size: 20px;
   text-align: right;
+  font-weight: bold;
+  color: black;
 `;
 // color: ${primaryColor};
 export const Mask = styled.div`
@@ -90,8 +95,36 @@ export const Mask = styled.div`
 `;
 
 export const EmptyCart = styled.div`
-font-weight: bold;
+  font-weight: bold;
   padding: 16px;
   color: #ff6700;
   text-align: center;
 `;
+
+export const NavIconWrapper = styled.div`
+  position: relative;
+`;
+
+export const Bubble = styled.div`
+  position: absolute;
+  top: -39%;
+  right: -40%;
+  padding: 2px 4px;
+  height: 24px;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: center;
+
+  border-radius: 2px;
+  -webkit-animation: 1s;
+  margin-top: 18%;
+  margin-right: 42%;
+  width: 7%;
+  animation: 1s;
+
+  border-radius: 2px;
+  animation: ${(p) => (p.change ? styledAnimation : null)} 1s;
+`;
+const styledAnimation = keyframes`${animation}`;
+// background-color: ${primaryColor};
+// background-color: blue;
