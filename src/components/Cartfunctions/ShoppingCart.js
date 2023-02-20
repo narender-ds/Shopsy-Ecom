@@ -18,6 +18,8 @@ import {
   Mask,
   EmptyCart,
 } from "./CartFunctions";
+import basket from "../../assets/images/basket.jpg"
+import EmptyCarts from "../EmptyCart/EmptyCarts";
 const ShoppingCart = () => {
   const cart = useSelector((state) => state.cart);
   const ui = useSelector((state) => state.ui);
@@ -37,7 +39,7 @@ const ShoppingCart = () => {
           </div>
         </div>
       </section>
-      {cart.length > 0 ? "" : <EmptyCart>Your Cart is Empty</EmptyCart>}
+      {cart.length > 0 ? 
       <section className="shopping-cart spad" visible={ui.cartDrawerVisible}>
         <div className="container">
           <div className="row">
@@ -104,7 +106,9 @@ const ShoppingCart = () => {
                             <CartProductQuantity>
                               {cartItem.quantity}
                             </CartProductQuantity>
+                            
                             <ActionButton
+                            disabled={cartItem.quantity === 10}
                               onClick={() => {
                                 dispatch(increament(cartItem.id));
                               }}
@@ -183,6 +187,12 @@ const ShoppingCart = () => {
           </div>
         </div>
       </section>
+     : (<>
+     
+     <EmptyCart>Your Cart is Empty</EmptyCart>  
+     <EmptyCarts/>
+    </>
+    )}
     </>
   );
 };

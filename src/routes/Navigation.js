@@ -16,6 +16,8 @@ import MainProducts from "../components/products/MainProducts";
 import SmartPhones from "../pages/SmartPhones";
 import Category from "../pages/Category";
 import ShopDetails from "../components/dropdDownPages/ShopDetails";
+import EmptyCarts from "../components/EmptyCart/EmptyCarts";
+;
 
 const Navigation = () => {
   return (
@@ -38,6 +40,7 @@ const Navigation = () => {
         <Route path="products" element={<MainProducts />} />
         <Route path="/smartphones" element={<SmartPhones />} />
         <Route path="/shop-details" element={<ShopDetails />} />
+        <Route path="/empty-cart" element={<EmptyCarts />} />
       </Routes>
       <Footer />
     </div>

@@ -103,7 +103,7 @@ const ShopDetails = () => {
                   <h3>
                     ${detail.price} <span>{detail.discountPercentage}%</span>
                   </h3>
-                  <p>{detail.description}</p>
+                  <p className="description">{detail.description}</p>
                   {detail.category == "Clothes" ? (
                     <div className="product__details__option">
                       <div className="product__details__option__size">

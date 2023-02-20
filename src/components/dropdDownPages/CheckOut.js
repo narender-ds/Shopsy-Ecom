@@ -290,12 +290,14 @@ const CheckOut = () => {
                       return (
                         <>
                           <ul className="checkout__total__products">
+                          <img style={{width:"20%", height:"20%"}}src={cartProducts.thumbnail}/>
                             <li>
-                              01. {cartProducts.title}{" "}
+                              01. {cartProducts.title}
                               <span>
                                 $ {cartProducts.quantity * cartProducts.price}
                               </span>
-                            </li>
+                            </li> 
+                            
                           </ul>
                         </>
                       );

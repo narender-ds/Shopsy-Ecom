@@ -38,13 +38,29 @@ const CartSlider = () => {
         ) : (
           <EmptyCart>Your Cart is Empty</EmptyCart>
         )} */}
-        {cart.length > 0 ?  <div
-          className="display flex"
-          style={{ alignContent: "center", justifyContent: "space-between",color: "#ff6700" }}
-        >
-          <h4 style={{color: "#ff6700"}}>Shopping Cart</h4>
-        </div> : <EmptyCart>Your Cart is Empty</EmptyCart>}
-       
+        {cart.length > 0 ? (
+          <div
+            className="display flex"
+            style={{
+              alignContent: "center",
+              justifyContent: "space-between",
+              color: "#ff6700",
+            }}
+          >
+            <h4 style={{ color: "#ff6700" }}>Shopping Cart</h4>
+          </div>
+        ) : (
+          <EmptyCart>Your Cart is Empty</EmptyCart>
+        )}
+        {cart.length > 0 ? (
+          <CartClearButton onClick={() => navigate("/shopping-cart")}>
+            Go To Cart
+          </CartClearButton>
+        ) : (
+          <CartClearButton onClick={() => navigate("/shop")}>
+            Shop Now
+          </CartClearButton>
+        )}
         {cart.map((cartItem) => (
           <CartItem key={cartItem.id}>
             <CartProductImage src={cartItem.thumbnail} alt={cartItem.title} />
@@ -64,6 +80,7 @@ const CartSlider = () => {
                 </ActionButton>
                 <CartProductQuantity>{cartItem.quantity}</CartProductQuantity>
                 <ActionButton
+                  disabled={cartItem.quantity === 10}
                   onClick={() => {
                     dispatch(increament(cartItem.id));
                   }}
@@ -75,21 +92,15 @@ const CartSlider = () => {
           </CartItem>
         ))}
         {totalPrice > 0 && <CartTotal>Total ${totalPrice}</CartTotal>}
-        {cart.length > 0 ? <CartClearButton onClick={() => navigate("/shopping-cart")}>
-          Go To Cart
-        </CartClearButton> : <CartClearButton onClick={() => navigate("/shop")}>
-          Shop Now
-        </CartClearButton>}
-        
       </CartContainer>
 
-      {ui.cartDrawerVisible && (
+      {/* {ui.cartDrawerVisible && (
         <Mask
           onClick={() => {
             dispatch(toggle());
           }}
         />
-      )}
+      )} */}
     </>
   );
 };

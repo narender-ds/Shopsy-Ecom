@@ -142,7 +142,7 @@ const MainProducts = () => {
                     <li className="lis">
                       <i className="fa fa-star-o" aria-hidden="true" />
                     </li>
-                    <Link to="#">
+                    <Link to="#" >
                       <img src={HeartIcons} alt="" />
                     </Link>
                   </ul>
