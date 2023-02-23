@@ -36,7 +36,7 @@ const Header = () => {
                     <input
                       type="text"
                       id="search-input"
-                      style={{ width: "80%" }}
+                      style={{ width: "70%" }}
                       placeholder="Search here....."
                     />{" "}
                     <img src={SearchIcon} alt="" />
@@ -134,7 +134,7 @@ const Header = () => {
                     p-id="4119"
                     width="24"
                     height="24"
-                    fill="#000"
+                    fill="#2183a2"
                     onClick={() => {
                       dispatch(toggle());
                     }}

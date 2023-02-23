@@ -54,7 +54,7 @@ const Price = styled.p`
 export const Button = styled.button`
   padding: 8px 12px;
   color: #fff;
-  background-color: ${primaryColor};
+  background-color: #3B3E6E;
   border: none;
   border-radius: 2px;
   outline: none;
@@ -62,7 +62,7 @@ export const Button = styled.button`
   user-select: none;
 
   &:hover {
-    background: #f25807;
+    background: #2183A2;
   }
 `;
 
@@ -76,7 +76,7 @@ const Products = () => {
 
   return (
     <>
-      {products.loading && <Loading>加载中...</Loading>}
+      {products.loading && <Loading>...</Loading>}
       <ProductsContainer>
         {products.list.map((product) => (
           <ProductContainer key={product.id}>

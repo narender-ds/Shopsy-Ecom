@@ -113,7 +113,7 @@ color:red;
   margin-top: 5px;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
-  background-color: #0b0b0b;
+  background-color: #2183a2;
   }
   .buy-1{
     background-color: #2183a2;
@@ -153,7 +153,19 @@ color:red;
     font-family: 'Maison Neue';
     font-weight: 300;
   }
+  .empty-cart-slide {
 
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Maison Neue';
+    font-weight: 300;
+  }
+  .shopping-cart{ color: "#ff6700" }
+  .shopping-cart-div{
+    align-Content: center;
+    justify-content: space-between;
+    color: #2183a2;
+  }
   .h3ss {
     font-size: 2rem;
     line-height: 2rem;
@@ -169,7 +181,7 @@ color:red;
     margin: 1.25rem auto 0 auto;
   }
   .continueShopButton{
-    background-color:#ff6700;
+    background-color:#3b3e6e;
     padding: 8px 12px;
     color: #fff;
     border: none;
@@ -177,4 +189,7 @@ color:red;
     outline: none;
     cursor: pointer;
     user-select: none;
+    margin-top: 30px;
+    
   }
+ 

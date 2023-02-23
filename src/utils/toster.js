@@ -1,12 +1,7 @@
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-function Showsuccess(data) {
-  toast.success(data, {
-    theme: "dark",
-    position: toast.POSITION.LEFT_RIGHT,
-  });
-}
+
 
 function Showerror(data) {
   toast.error(data, {
@@ -32,7 +27,7 @@ function Showinfo(data) {
     closeOnClick:true
   });
 }
-const orderPlacedMessage = (data) => {
+const Showsuccess = (data) => {
   toast.success(data, {
       position: toast.POSITION.TOP_CENTER,
       closeOnClick:true
@@ -43,7 +38,7 @@ const Toster = {
   Showinfo,
   Showwarn,
   Showerror,
-  orderPlacedMessage
+
 };
 
 export default Toster;

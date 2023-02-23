@@ -18,6 +18,7 @@ import {
 } from "./CartFunctions";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import EmptyCartSlide from "../EmptyCart/EmptyCartSlide";
 const CartSlider = () => {
   const navigate = useNavigate();
   const cart = useSelector((state) => state.cart);
@@ -27,39 +28,21 @@ const CartSlider = () => {
   return (
     <>
       <CartContainer visible={ui.cartDrawerVisible}>
-        {/* {cart.length > 0 ? (
-          <CartClearButton
-            onClick={() => {
-              dispatch(clear());
-            }}
-          >
-            cart
-          </CartClearButton>
-        ) : (
-          <EmptyCart>Your Cart is Empty</EmptyCart>
-        )} */}
         {cart.length > 0 ? (
-          <div
-            className="display flex"
-            style={{
-              alignContent: "center",
-              justifyContent: "space-between",
-              color: "#ff6700",
-            }}
-          >
-            <h4 style={{ color: "#ff6700" }}>Shopping Cart</h4>
+          <div className="shopping-cart-div">
+            <h4 className="shopping-cart">Shopping Cart</h4>
+            <CartClearButton onClick={() => navigate("/shopping-cart")}>
+              Go To Cart
+            </CartClearButton>
           </div>
         ) : (
-          <EmptyCart>Your Cart is Empty</EmptyCart>
-        )}
-        {cart.length > 0 ? (
-          <CartClearButton onClick={() => navigate("/shopping-cart")}>
-            Go To Cart
-          </CartClearButton>
-        ) : (
-          <CartClearButton onClick={() => navigate("/shop")}>
-            Shop Now
-          </CartClearButton>
+          <>
+            <CartClearButton onClick={() => navigate("/shop")}>
+              Shop Now
+            </CartClearButton>
+            
+            <EmptyCartSlide/>
+          </>
         )}
         {cart.map((cartItem) => (
           <CartItem key={cartItem.id}>
@@ -67,7 +50,7 @@ const CartSlider = () => {
             <div>
               <CartProductTitle>{cartItem.title}</CartProductTitle>
               <CartProductSubtotal>
-                $：{cartItem.quantity * cartItem.price}
+                ${cartItem.quantity * cartItem.price}
               </CartProductSubtotal>
               <CartProductAction>
                 <ActionButton

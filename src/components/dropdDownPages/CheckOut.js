@@ -7,35 +7,40 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Toster from "../../utils/toster";
 import CartSlider from "../Cartfunctions/CartSlider";
-import * as Yup from "yup";
-import { useFormik } from "formik";
+import { useForm } from "react-hook-form";
+import { clear } from "../../redux/slice/CartSlice";
 
-const Validations = Yup.object({
-  firstname: Yup.string().min(2).required("FirstName is Required"),
-  lastname: Yup.string().min(3).required("LastName is Required"),
-  email: Yup.string().email("Invalid Email").required("Email is Required"),
-  password: Yup.string().min(8).max(20).required("Password is Required"),
-});
-const initialValues = {
-  firstname: "",
-  lastname: "",
-  email: "",
-  password: "",
-};
 const CheckOut = () => {
   const cart = useSelector((state) => state.cart);
   const ui = useSelector((state) => state.ui);
   const dispatch = useDispatch();
   const totalPrice = useSelector(cartTotalPriceSelector);
-  const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
-    useFormik({
-      initialValues: initialValues,
-      validationSchema: Validations,
-      onSubmit: (value, action) => {
-        action.resetForm();
-        console.log("value", value);
-      },
-    });
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isDirty, isValid },
+    watch,
+    reset,
+  } = useForm();
+
+  const submitForm = async (data) => {
+    console.log(data);
+    if (data) {
+      Toster.Showsuccess("Order Placed");
+      dispatch(clear());
+      reset();
+    }
+    // try {
+    //   if (result.success) {
+    //     navigate("/login", { replace: true });
+    //   } else {
+    //     console.log("first");
+    //   }
+    // } catch (error) {
+    //   // console.log('error user Login', error);
+    // }
+  };
   return (
     <>
       <CartSlider />
@@ -53,7 +58,7 @@ const CheckOut = () => {
       <section className="checkout spad">
         <div className="container">
           <div className="checkout__form">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit(submitForm)}>
               <div className="row">
                 <div className="col-lg-8 col-md-6">
                   <h6 className="coupon__code">
@@ -70,15 +75,16 @@ const CheckOut = () => {
                         <input
                           type="text"
                           name="firstname"
-                            value={values.firstname}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                          />
-                          {errors.firstname && touched.firstname ? (
-                            <p className="required">{errors.firstname}</p>
-                          ) : (
-                            ""
-                          )}
+                          {...register("firstname", {
+                            required: {
+                              value: true,
+                              message: "First Name is required",
+                            },
+                          })}
+                        />
+                        <span style={{ color: "red" }}>
+                          {errors?.firstname?.message}
+                        </span>
                       </div>
                     </div>
                     <div className="col-lg-6">
@@ -89,17 +95,16 @@ const CheckOut = () => {
                         <input
                           type="text"
                           name="lastname"
-                          value={values.lastname}
-                          title="Last Name"
-                          onChange={handleChange}
-                          onBlur={handleBlur}
+                          {...register("lastname", {
+                            required: {
+                              value: true,
+                              message: "Lirst Name is required",
+                            },
+                          })}
                         />
-                      
-                         {errors.lastname && touched.lastname ? (
-                          <p className="required">{errors.lastname}</p>
-                        ) : (
-                          ""
-                        )}
+                        <span style={{ color: "red" }}>
+                          {errors?.lastname?.message}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -110,15 +115,16 @@ const CheckOut = () => {
                     <input
                       type="text"
                       name="country"
-                      value={values.country}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
+                      {...register("country", {
+                        required: {
+                          value: true,
+                          message: "Country is required",
+                        },
+                      })}
                     />
-                    {/* {errors.country && touched.country ? (
-                      <p className="required">{errors.country}</p>
-                    ) : (
-                      ""
-                    )} */}
+                    <span style={{ color: "red" }}>
+                      {errors?.country?.message}
+                    </span>
                   </div>
                   <div className="checkout__input">
                     <p>
@@ -129,15 +135,17 @@ const CheckOut = () => {
                       placeholder="Street Address"
                       className="checkout__input__add"
                       name="address"
-                      value={values.address}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
+                      {...register("address", {
+                        required: {
+                          value: true,
+                          message: "address is required",
+                        },
+                      })}
                     />
-                    {/* {errors.address && touched.address ? (
-                      <p className="required">{errors.address}</p>
-                    ) : (
-                      ""
-                    )} */}
+                    <span style={{ color: "red" }}>
+                      {errors?.address?.message}
+                    </span>
+
                     <input
                       type="text"
                       placeholder="Apartment, suite, unite ect (optinal)"
@@ -150,15 +158,16 @@ const CheckOut = () => {
                     <input
                       type="text"
                       name="city"
-                      value={values.city}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
+                      {...register("city", {
+                        required: {
+                          value: true,
+                          message: "city is required",
+                        },
+                      })}
                     />
-                    {/* {errors.city && touched.city ? (
-                      <p className="required">{errors.city}</p>
-                    ) : (
-                      ""
-                    )} */}
+                    <span style={{ color: "red" }}>
+                      {errors?.city?.message}
+                    </span>
                   </div>
                   {/* <div className="checkout__input">
                     <p>
@@ -184,15 +193,16 @@ const CheckOut = () => {
                     <input
                       type="text"
                       name="postalCode"
-                      value={values.postalCode}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
+                      {...register("postalCode", {
+                        required: {
+                          value: true,
+                          message: "postalCode is required",
+                        },
+                      })}
                     />
-                    {/* {errors.postalCode && touched.postalCode ? (
-                      <p className="required">{errors.postalCode}</p>
-                    ) : (
-                      ""
-                    )} */}
+                    <span style={{ color: "red" }}>
+                      {errors?.postalCode?.message}
+                    </span>
                   </div>
                   <div className="row">
                     <div className="col-lg-6">
@@ -203,15 +213,16 @@ const CheckOut = () => {
                         <input
                           type="text"
                           name="phone"
-                          value={values.phone}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
+                          {...register("phone", {
+                            required: {
+                              value: true,
+                              message: "phone is required",
+                            },
+                          })}
                         />
-                       {/* {errors.phone && touched.phone ? (
-                          <p className="required">{errors.phone}</p>
-                        ) : (
-                          ""
-                        )} */}
+                        <span style={{ color: "red" }}>
+                          {errors?.phone?.message}
+                        </span>
                       </div>
                     </div>
                     <div className="col-lg-6">
@@ -222,15 +233,21 @@ const CheckOut = () => {
                         <input
                           type="text"
                           name="email"
-                          value={values.email}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
+                          {...register("email", {
+                            required: {
+                              value: true,
+                              message: "Email is required",
+                            },
+                            pattern: {
+                              value:
+                                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                              message: "Email must be valid",
+                            },
+                          })}
                         />
-                      {errors.email && touched.email ? (
-                        <p className="required">{errors.email}</p>
-                      ) : (
-                        ""
-                      )}
+                        <span style={{ color: "red" }}>
+                          {errors.email?.message}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -290,14 +307,16 @@ const CheckOut = () => {
                       return (
                         <>
                           <ul className="checkout__total__products">
-                          <img style={{width:"20%", height:"20%"}}src={cartProducts.thumbnail}/>
+                            <img
+                              style={{ width: "20%", height: "20%" }}
+                              src={cartProducts.thumbnail}
+                            />
                             <li>
                               01. {cartProducts.title}
                               <span>
                                 $ {cartProducts.quantity * cartProducts.price}
                               </span>
-                            </li> 
-                            
+                            </li>
                           </ul>
                         </>
                       );
@@ -347,6 +366,7 @@ const CheckOut = () => {
                         <span className="checkmark" />
                       </label>
                     </div>
+                   
                     <button type="submit" className="site-btn">
                       PLACE ORDER
                     </button>

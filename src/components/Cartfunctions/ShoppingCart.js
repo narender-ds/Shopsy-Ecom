@@ -64,7 +64,7 @@ const ShoppingCart = () => {
                               key={cartItem.id}
                             >
                               <div className="product__cart__item__pic">
-                                <img src={cartItem.thumbnail} alt="" />
+                                <img className="" src={cartItem.thumbnail} alt="" />
                               </div>
                               <div className="product__cart__item__text">
                                 <h6>{cartItem.title}</h6>
@@ -74,27 +74,7 @@ const ShoppingCart = () => {
                             <td className="quantity__item">
                               <div className="quantity">
                                 <div className="pro-qty-2">
-                                  {cartItem.quantity}
-                                </div>
-                              </div>
-                            </td>
-                            <td className="cart__price">
-                              {" "}
-                              <CartProductSubtotal>
-                                $ {cartItem.quantity * cartItem.price}
-                              </CartProductSubtotal>
-                            </td>
-
-                            <td className="cart__close">
-                              <i
-                                className="fa fa-close"
-                                onClick={() => {
-                                  dispatch(removeItem(cartItem.id));
-                                }}
-                              />
-                            </td>
-                          </tr>
-                          <CartProductAction>
+                                <CartProductAction>
                             <ActionButton
                               disabled={cartItem.quantity === 1}
                               onClick={() => {
@@ -116,6 +96,26 @@ const ShoppingCart = () => {
                               +
                             </ActionButton>
                           </CartProductAction>
+                                </div>
+                              </div>
+                            </td>
+                            <td className="cart__price">
+                              {" "}
+                              <CartProductSubtotal>
+                                $ {cartItem.quantity * cartItem.price}
+                              </CartProductSubtotal>
+                            </td>
+
+                            <td className="cart__close">
+                              <i
+                                className="fa fa-close"
+                                onClick={() => {
+                                  dispatch(removeItem(cartItem.id));
+                                }}
+                              />
+                            </td>
+                          </tr>
+                          
                         </tbody>
                       </>
                     );

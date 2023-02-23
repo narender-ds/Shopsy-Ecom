@@ -386,7 +386,7 @@ const EmptyCarts = () => {
           Continue Shopping
         </button>
       </div>
-      <br/>
+      <br />
     </>
   );
 };

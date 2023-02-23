@@ -20,7 +20,7 @@ export const CartContainer = styled.div`
   width: 300px;
   height: 100vh;
   padding: 60px 12px 0;
-  background: #fff;
+  background: #F3F2EE;
   overflow: scroll;
   transition: transform 0.2s ease-in-out;
   transform: translateX(${(p) => (p.visible ? 0 : "300px")});
@@ -97,9 +97,9 @@ export const Mask = styled.div`
 export const EmptyCart = styled.div`
   font-weight: bold;
   padding: 36px;
-  color: #ff6700;
+  color: #2183A2;
   text-align: center;
-
+ 
 `;
 
 export const NavIconWrapper = styled.div`

@@ -164,14 +164,15 @@ ol {
 	text-transform: uppercase;
 	padding: 14px 30px;
 	color: #ffffff;
-	background: #000000;
+	background: #3b3e6e;
 	letter-spacing: 4px;
+	
 }
 
 .site-btn {
 	font-size: 14px;
 	color: #ffffff;
-	background: #111111;
+	background: #3b3e6e;
 	font-weight: 700;
 	border: none;
 	text-transform: uppercase;
@@ -323,7 +324,7 @@ ol {
 }
 
 .header__top {
-	background: #111111;
+	background: #2183a2;
 	padding: 10px 0;
 }
 
@@ -1946,7 +1947,7 @@ ol {
 -----------------------*/
 
 .footer {
-	background: #111111;
+	background: #3B3E6E;
 	padding-top: 70px;
 }
 
@@ -2001,7 +2002,7 @@ ol {
 .footer__widget .footer__newslatter form input {
 	width: 100%;
 	font-size: 15px;
-	color: #3d3d3d;
+	color: #ffffff;
 	background: transparent;
 	border: none;
 	padding: 15px 0;
@@ -2009,11 +2010,11 @@ ol {
 }
 
 .footer__widget .footer__newslatter form input::-webkit-input-placeholder {
-	color: #3d3d3d;
+	color: #ffffff;
 }
 
 .footer__widget .footer__newslatter form input::-moz-placeholder {
-	color: #3d3d3d;
+	color: #ffffff;
 }
 
 .footer__widget .footer__newslatter form input:-ms-input-placeholder {
@@ -2025,7 +2026,7 @@ ol {
 }
 
 .footer__widget .footer__newslatter form input::placeholder {
-	color: #3d3d3d;
+	color: #ffffff;
 }
 
 .footer__widget .footer__newslatter form button {
@@ -2344,7 +2345,7 @@ ol {
 .shopping__cart__table table tbody tr td.product__cart__item .product__cart__item__pic {
 	float: left;
 	margin-right: 30px;
-	width: 50%;
+	width: 30%;
 	height: 60%;
 }
 
@@ -2412,8 +2413,8 @@ ol {
 
 .continue__btn.update__btn a {
 	color: #ffffff;
-	background: #111111;
-	border-color: #111111;
+	background: #3b3e6e;
+	border-color: #3b3e6e;
 }
 
 .continue__btn.update__btn a i {
@@ -2481,7 +2482,7 @@ ol {
 	font-weight: 700;
 	letter-spacing: 2px;
 	text-transform: uppercase;
-	background: #111111;
+	background: #3b3e6e;
 	padding: 0 30px;
 	border: none;
 	position: absolute;

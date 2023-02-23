@@ -10,11 +10,11 @@ import { useDispatch, useSelector } from "react-redux";
 
 const MainProducts = () => {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.products);
-  // console.log("productsproducts", products);
-  useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
+  // const products = useSelector((state) => state.products);
+  // // console.log("productsproducts", products);
+  // useEffect(() => {
+  //   dispatch(fetchProducts());
+  // }, [dispatch]);
 
   const [getProduct, setGetProduct] = useState([]);
   useEffect(() => {
@@ -111,7 +111,7 @@ const MainProducts = () => {
                 </div>
               </div>
             </>
-          );
+          );+
         })}
       </div> */}
       <div className="row">
