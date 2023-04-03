@@ -12,7 +12,7 @@ import Shop from "./Shop";
 const SmartPhones = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
-  console.log("productsproducts", products);
+  // console.log("productsproducts", products);
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);

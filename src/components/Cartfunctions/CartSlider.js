@@ -40,8 +40,7 @@ const CartSlider = () => {
             <CartClearButton onClick={() => navigate("/shop")}>
               Shop Now
             </CartClearButton>
-            
-            <EmptyCartSlide/>
+            <EmptyCartSlide />
           </>
         )}
         {cart.map((cartItem) => (

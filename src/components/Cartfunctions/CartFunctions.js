@@ -36,8 +36,8 @@ export const CartItem = styled.div`
   border-bottom: 1px solid #ededed;
 `;
 export const CartProductImage = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 60px;
   margin-right: 8px;
   border: 1px solid #f6f6f6;
 `;

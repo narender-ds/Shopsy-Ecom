@@ -5,127 +5,39 @@ import SearchIcons from "../../assets/images/icon/search.png";
 import { Link } from "react-router-dom";
 import { productlists } from "../../api/ApiCall";
 import { addToCart } from "../../redux/slice/CartSlice";
-import { fetchProducts } from "../../redux/slice/ProductDetailSlice";
+import { fetchProducts } from "../../redux/slice/productSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { STATUS } from "../../context/Status";
+import Detail from "../../utils/skeleton/Detail";
 
 const MainProducts = () => {
   const dispatch = useDispatch();
-  // const products = useSelector((state) => state.products);
-  // // console.log("productsproducts", products);
-  // useEffect(() => {
-  //   dispatch(fetchProducts());
-  // }, [dispatch]);
-
-  const [getProduct, setGetProduct] = useState([]);
+  const { products, status } = useSelector((state) => state.products);
   useEffect(() => {
-    productlists()
-      .then((res) => {
-        setGetProduct(res);
-      })
-      .catch((err) => {});
-    return () => {};
+    dispatch(fetchProducts());
   }, []);
+  if (status === STATUS.LOADING) {
+    return <Detail />;
+  }
+  if (status !== STATUS.LOADING && status === STATUS.ERROR) {
+    return <h2>{status}</h2>;
+  }
 
   return (
     <>
-      {/* <div className="row">
-        {getProduct?.products?.map((products) => {
-          console.log("12232333333", products);
-          return (
-            <>
-              <div className="col-lg-4 col-md-6 col-sm-6">
-                <div className="product__item">
-                  <div className="product__item__pic set-bg" key={products.id}>
-                    <Link to="/shop-details" state={{ data: products }}>
-                      {" "}
-                      <img
-                        id="productImage"
-                        style={{ width: "80%" }}
-                        src={products.thumbnail}
-                      />
-                    </Link>
-                    <ul className="product__hover">
-                      <li>
-                        <Link to="/shopping-cart">
-                          <img src={HeartIcons} alt="" />
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/shopping-cart">
-                          <img src={CompareIcons} alt="" /> <span>Compare</span>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/shopping-cart">
-                          <img src={SearchIcons} alt="" />
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="product__item__text">
-                    <button>
-                      <Link
-                        className="add-cart"
-                        onClick={() => {
-                          dispatch(addToCart(products));
-                        }}
-                      >
-                        + Add To Cart
-                      </Link>
-                    </button>
-
-                    <Link
-                      to="/shop-details"
-                      style={{ marginLeft: "55%" }}
-                      className="add-cart"
-                      state={{ data: products }}
-                    >
-                      View Details
-                    </Link>
-
-                    <h6 style={{ fontWeight: "bold" }}>{products.title}</h6>
-                    <h5>${products.price}</h5>
-                    <div className="rating">
-                      <i className="fa fa-star-o" />
-                      <i className="fa fa-star-o" />
-                      <i className="fa fa-star-o" />
-                      <i className="fa fa-star-o" />
-                      <i className="fa fa-star-o" />
-                    </div>
-                    {products.category == "cloths" ? (
-                      <div className="product__color__select">
-                        <label htmlFor="pc-4">
-                          <input type="radio" id="pc-4" />
-                        </label>
-                        <label className="active black" htmlFor="pc-5">
-                          <input type="radio" id="pc-5" />
-                        </label>
-                        <label className="grey" htmlFor="pc-6">
-                          <input type="radio" id="pc-6" />
-                        </label>
-                      </div>
-                    ) : (
-                      ""
-                    )}
-                  </div>
-                </div>
-              </div>
-            </>
-          );+
-        })}
-      </div> */}
       <div className="row">
         <div className="gallery">
-          {getProduct?.products?.map((products) => {
+          {products.products?.map((item) => {
+            console.log("item", item);
             return (
               <>
                 <div className="content">
-                  <Link to="/shop-details" state={{ data: products }}>
-                    <img className="imgs" src={products.thumbnail} />
+                  <Link to="/shop-details" state={{ data: item }}>
+                    <img className="imgs" src={item.thumbnail} />
                   </Link>
-                  <h3 className="h3s">{products.title}</h3>
+                  <h3 className="h3s">{item.title}</h3>
                   <p className="ps">{}</p>
-                  <h6 className="h6s">${products.price}</h6>
+                  <h6 className="h6s">${item.price}</h6>
                   <ul className="uls">
                     <li className="lis">
                       <i className="fa fa-star" aria-hidden="true" />
@@ -142,15 +54,15 @@ const MainProducts = () => {
                     <li className="lis">
                       <i className="fa fa-star-o" aria-hidden="true" />
                     </li>
-                    <Link to="#" >
+                    {/* <Link to="#">
                       <img src={HeartIcons} alt="" />
-                    </Link>
+                    </Link> */}
                   </ul>
 
                   <button
                     className="buttons"
                     onClick={() => {
-                      dispatch(addToCart(products));
+                      dispatch(addToCart(item));
                     }}
                   >
                     Add To Cart

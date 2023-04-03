@@ -6,7 +6,7 @@ import MainProducts from "../components/products/MainProducts";
 const DashBoard = () => {
   return (
     <>
-      <Banner />
+      {/* <Banner /> */}
 
       <section className="product spad">
         <div className="container">
