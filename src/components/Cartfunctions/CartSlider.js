@@ -73,7 +73,10 @@ const CartSlider = () => {
             </div>
           </CartItem>
         ))}
-        {totalPrice > 0 && <CartTotal>Total ${totalPrice}</CartTotal>}
+        
+
+    {totalPrice > 0 && <CartTotal>Total ${totalPrice}</CartTotal>}
+
       </CartContainer>
 
       {/* {ui.cartDrawerVisible && (

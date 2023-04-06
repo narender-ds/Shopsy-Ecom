@@ -476,3 +476,10 @@ color:red;
         padding-top: 25%;
     }
 }
+
+.sliderBottom{
+    background-color: #ff9f43;
+    position: sticky;
+    z-index: 99;
+    top: 0;
+}

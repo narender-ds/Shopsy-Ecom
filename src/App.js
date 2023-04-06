@@ -1,17 +1,17 @@
 import { BrowserRouter } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 import Navigation from "./routes/Navigation";
 import "./assets/css/style.css";
 import "./assets/css/bootstrap.min.css";
 import "./assets/css/elegant-icons.css";
 import "./assets/css/font-awesome.min.css";
 import "./assets/css/nice-select.css";
-import { ToastContainer } from "react-toastify";
-function App() {
+const App=()=> {
   return (
     <div className="App">
-     
       <BrowserRouter>
-        <Navigation />
+<Navigation/>
       </BrowserRouter>
       <ToastContainer autoClose={4000} />
     </div>

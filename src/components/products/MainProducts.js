@@ -28,7 +28,7 @@ const MainProducts = () => {
       <div className="row">
         <div className="gallery">
           {products.products?.map((item) => {
-            console.log("item", item);
+            
             return (
               <>
                 <div className="content">

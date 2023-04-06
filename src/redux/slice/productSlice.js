@@ -8,6 +8,14 @@ const initialState = {
   products: [],
 };
 
+//fetching product using build in thunk on toolkit
+
+export const fetchProducts = createAsyncThunk("fetch/products", async () => {
+  const data = await axios.get(`${base_url}/products`).then((res) => res.data);
+  console.log('first', data)
+  return data;
+}); 
+
 const productSlice = createSlice({
   name: "products",
   initialState,
@@ -26,11 +34,5 @@ const productSlice = createSlice({
   },
 });
 
-//fetching product using build in thunk on toolkit
-
-export const fetchProducts = createAsyncThunk("fetch/products", async () => {
-  const data = await axios.get(`${base_url}/products`).then((res) => res.data);
-  return data;
-});
 
 export default productSlice.reducer;
